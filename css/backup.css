@@ -1,0 +1,416 @@
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+color: rgba(0,0,0,.7);
+}
+
+::-webkit-scrollbar {
+  opacity: 0;
+  width: 5px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  width: 20px;
+  height: 20px;
+  border-radius: 13%;
+}
+
+.section-padding-bottom {
+  padding-bottom: 200px;
+}
+
+
+
+.will-change {
+    will-change: transform, opacity;
+}
+
+
+/* 기본셋팅 */
+
+/* 인트로쇼케이스 시작 */
+
+.showcase {
+position: absolute;
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.sky {
+position: absolute;
+top: 0%;
+left: 0%;
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background: url(/22/img/sky22323.jpg);
+background-repeat: no-repeat;
+background-size: 100%;
+background-attachment: fixed;
+background-position: calc(var(--x)/20) calc(var(--y)/20);
+}
+
+.sky img {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+object-fit: cover;
+} 
+
+
+.showcase h2 {
+margin: 0;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+background: #fff;
+font-size: 10vw;
+text-align: center;
+text-transform: uppercase;
+color:#000;
+line-height: 100vh;
+font-weight: 1000;
+mix-blend-mode: screen;
+text-shadow: 1px 2px 0 #000;
+transition: all .5s;
+
+}
+.showcase h2:hover {
+text-shadow: 2px 4px 0 #000,
+             3px 6px 0 #000,  
+             4px 8px 0 #000,  
+             5px 10px 0 #000,  
+             6px 12px 0 #000,  
+             7px 14px 0 rgba(0,0,0,.2);
+}
+
+
+
+
+.nav-bar {
+position: absolute;
+z-index: 999;
+width: 100%;
+}
+
+
+.section-box {
+width: 30%;
+height: 10%;
+position: absolute;
+top: 0;
+left: 50%;
+}
+
+
+
+
+.nav-bar .header-top {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+display: block;
+z-index: 99;
+}
+
+.header-top .header-container {
+position: absolute;
+width: 100%;
+max-width: 2560px;
+margin: auto;
+padding: 22px 70px;
+transition: ease-in-out .3s;
+}
+
+.header-container .blanding-mainlogo {
+position: relative;
+display: table;
+z-index: 99999;
+top: 5px;
+align-items: center;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.header-container .blanding-mainlogo a{
+background-color: transparent;
+display: inline-block;
+text-decoration: none;
+
+
+}
+
+.header-container .blanding-mainlogo a img {
+border-style: none;
+width: 100px;
+max-width: 100%;
+height: auto;
+vertical-align: middle;
+
+}
+
+
+.header-top .header-container .menu-icon {
+position: absolute;
+right: 0;
+top: 30%;
+cursor: pointer;
+margin-right: 50px;
+z-index: 999;
+}
+
+.header-top .header-container .menu-icon .icon {
+position: relative;
+width: 22px;
+display: inline-block;
+height: 18px;
+/* overflow: hidden; */
+will-change: transform;
+}
+
+span {
+display: inline-block;
+}
+.nav-bar .icon i {
+display: inline-block;
+line-height: 1; 
+}
+.nav-bar .icon .menu-icon_linecenter {
+
+
+width: 22px;
+height: 4px;
+display: block;
+background-color: #000000;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+transition: .8s;
+border-radius: 20%;
+}
+.nav-bar .icon .menu-icon_linecenter:before, 
+.nav-bar .icon .menu-icon_linecenter:after {
+content: '';
+height: inherit;
+position: absolute;
+background-color:inherit;
+transition:all .45s;
+border-radius: 20%;
+}
+
+.nav-bar .menu-icon .menu-icon_linecenter:before {
+width: 22px;
+top: -8px;
+right: 0;
+
+}
+.nav-bar .menu-icon .menu-icon_linecenter:after {
+width: 22px;
+bottom: -8px;
+left: 0;
+}
+
+
+
+/* 메뉴아이콘 마우스 호버시 */
+.nav-bar .menu-icon:hover .menu-icon_linecenter:before {
+width: 11px;
+top: -0px;
+/* transform: rotate(45deg); */
+transition:all .45s;
+}
+.nav-bar .menu-icon:hover .menu-icon_linecenter:after {
+width: 11px;
+bottom: -0px;
+/* transform: rotate(-45deg); */
+transition:all .45s;
+}
+
+/* 바디에 엑티브클래스 추가시  */
+body.nav-active .nav-bar .menu-icon .menu-icon_linecenter {
+transform: translateX(-55%) rotate(45deg);
+}
+body.nav-active .nav-bar .menu-icon .menu-icon_linecenter:before {
+width: 22px;
+top: -0px;
+transform: rotate(-180deg);
+transition: ease .8s;
+} 
+body.nav-active .nav-bar .menu-icon .menu-icon_linecenter:after {
+width: 22px;
+bottom: -0px;
+transform: rotate(90deg);
+transition: ease .8s;
+}
+
+
+
+.nav-LO, .nav-RU {
+width: 18.2%;
+height: 15vh;
+position: absolute;
+top: 0;
+right: 0;
+opacity: 1;
+visibility: visible;
+text-align: center;
+transition: all 1s ease-in-out 0.8s;
+z-index: 15;
+}
+
+.nav-RU {
+width: 15vh;
+height: 36.2vh;
+right: 0;
+left: auto;
+}
+
+.nav-LO:before,
+.nav-LO:after,
+.nav-RU:before,
+.nav-RU:after
+{
+content: "";
+position: fixed;
+width: 18.2%;
+height: 15vh;
+left: 0;
+top: 0;
+background: rgba(33, 33, 33, 0.5);
+z-index: -1;
+transition: cubic-bezier(0.77, 0, 0.175, 1) 1.3s, -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 1.3s;
+transform: translateX(-100%) translateY(0%);
+}
+
+
+.nav-RU:before,
+.nav-RU:after {
+content: "";
+position: fixed;
+width: 15vh;
+height: 36.2vh;
+right: 0;
+left: auto;
+transform: translateX(100%) translateY(0%);
+}
+
+
+.nav-LO:before,
+.nav-RU:before {
+transition-delay: 0.8s;
+}
+
+.nav-LO:after,
+.nav-RU:after {
+transition-delay: 0.1s;
+background: #212121;
+}
+
+.nav-LO .inner-LO {
+display: table-cell;
+vertical-align: middle;
+box-sizing: border-box;
+width: 18.2%;
+margin: auto;
+opacity: 1;
+transition: all 0.2 ease;
+height: 36.2vh;
+}
+
+
+.nav-LO .inner-LO:before,
+.nav-RU .inner-RU:before {
+content: "";
+opacity: 0.2;
+z-index: 1;
+position: absolute;
+left: 0;
+top: 0;
+width: 18.2%;
+height: 36.2%;
+pointer-events: none;
+}
+
+
+
+.nav-RU .inner-RU {
+width: 15vh;
+height: 36.2vh;
+}
+
+.nav-LO .inner-LO .nav-content-LO {
+display: flex;
+flex-flow: column;
+justify-content: center;
+align-items: center;
+height: 100%;
+text-align: center;
+}
+
+.nav-LO .inner-LO .nav-content-LO li {
+position: relative;
+display: block;
+font-size: 15px;
+letter-spacing: 3px;
+color: #050505;
+}
+
+.nav-LO .inner-LO .nav-content-LO li a {
+position: relative;
+display: block;
+opacity: 0;
+transform-origin: left;
+transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+
+
+
+
+.nav-bar.nav-active .nav-LO,
+.nav-bar.nav-active .nav-RU {
+visibility: visible;
+opacity: 1;
+transition: all 0.2s ease-in-out 0.5s;
+}
+
+.nav-bar.nav-active .nav-LO:before,
+.nav-bar.nav-active .nav-RU:before {
+transition-delay: 0s;
+}
+.nav-bar.nav-active .nav-LO:after,
+.nav-bar.nav-active .nav-RU:after {
+transition-delay: 0.4s;
+}
+
+.nav-bar.nav-active .nav-LO .inner-LO,
+.nav-bar.nav-active .nav-RU .inner-RU {
+opacity: 1;
+transition-delay: 0.8s;
+}
+
+
+
+
+
